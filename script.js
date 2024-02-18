@@ -40,14 +40,56 @@ function handleSeatClick(seatId, seatClass, seatPrice) {
       ).toString();
 
       selectedSeats.push(seatId);
-
-
+      
 
     } else {
       alert("You can only select a maximum of 4 seats.");
     }
   }
 }
+
+function apply() {
+    const applyButton = document.getElementById("apply-btn");
+    const applyInput = document.getElementById("apply-input");
+    const grandTotal = document.getElementById("grand-total");
+    const totalPrice = document.getElementById("tot-price");
+
+    applyButton.addEventListener("click", function (event) {
+        const inputValue = applyInput.value;
+
+        if (inputValue === 'NEW15') {
+            const discountPercentage = 15;
+            const discountAmount = (parseInt(totalPrice.innerText) * discountPercentage) / 100;
+            const discountedTotal = parseInt(totalPrice.innerText) - discountAmount;
+
+            grandTotal.innerText = discountedTotal.toString();
+
+            alert('Coupon applied successfully. 15% discount has been applied.');
+        } 
+        
+        else if (inputValue === 'Couple 20'){
+            const discountPercentage = 20;
+            const discountAmount = (parseInt(totalPrice.innerText) * discountPercentage) / 100;
+            const discountedTotal = parseInt(totalPrice.innerText) - discountAmount;
+
+            grandTotal.innerText = discountedTotal.toString();
+
+            alert('Coupon applied successfully. 20% discount has been applied.');
+
+        }
+        
+        
+        
+        else {
+            alert('Invalid coupon code. Please enter a valid code.');
+        }
+    });
+}
+
+apply();
+
+
+
 
 const a1 = document.getElementById("A1");
 a1.addEventListener("click", function () {
@@ -91,5 +133,9 @@ const b4 = document.getElementById("B4");
 b4.addEventListener("click", function () {
   handleSeatClick("B4", "Economy", 550);
 });
+
+
+
+
 
 
