@@ -65,6 +65,8 @@ function apply() {
             grandTotal.innerText = discountedTotal.toString();
 
             alert('Coupon applied successfully. 15% discount has been applied.');
+            applyInput.style.display = 'none';
+            applyButton.style.display = 'none';
         } 
         
         else if (inputValue === 'Couple 20'){
@@ -75,6 +77,9 @@ function apply() {
             grandTotal.innerText = discountedTotal.toString();
 
             alert('Coupon applied successfully. 20% discount has been applied.');
+
+            applyInput.style.display = 'none';
+            applyButton.style.display = 'none';
 
         }
         
