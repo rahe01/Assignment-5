@@ -39,6 +39,12 @@ function handleSeatClick(seatId, seatClass, seatPrice) {
         parseInt(totalPrice.innerText) + parseInt(seatPrice)
       ).toString();
 
+
+      const grandTotalPrice = document.getElementById('grand-total');
+      grandTotalPrice.innerText = (
+        parseInt(grandTotalPrice.innerText) + parseInt(seatPrice)
+      ).toString();
+
       selectedSeats.push(seatId);
       
 
